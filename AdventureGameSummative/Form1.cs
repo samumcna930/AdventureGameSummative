@@ -12,6 +12,8 @@ namespace AdventureGameSummative
 {
     public partial class Form1 : Form
     {
+        int arrowChance = 10;
+        int freezeChance = 10;
         public Form1()
         {
             InitializeComponent();
@@ -19,7 +21,7 @@ namespace AdventureGameSummative
 
         private void Button1_Click(object sender, EventArgs e)
         {
-
+            playButton.Text = "";
         }
     }
 }
