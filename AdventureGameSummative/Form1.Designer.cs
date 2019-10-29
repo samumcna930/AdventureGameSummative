@@ -51,8 +51,8 @@
             this.playButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.playButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.playButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.playButton.Font = new System.Drawing.Font("Schneidler BT", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playButton.Location = new System.Drawing.Point(31, 343);
+            this.playButton.Font = new System.Drawing.Font("Schneidler BT", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playButton.Location = new System.Drawing.Point(33, 360);
             this.playButton.Name = "playButton";
             this.playButton.Size = new System.Drawing.Size(202, 67);
             this.playButton.TabIndex = 1;
