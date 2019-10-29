@@ -21,7 +21,7 @@ namespace AdventureGameSummative
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            playButton.Text = "";
+            gameTitle.Text = "";
         }
     }
 }
