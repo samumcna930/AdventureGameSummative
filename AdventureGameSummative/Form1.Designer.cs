@@ -30,6 +30,7 @@
         {
             this.gameTitle = new System.Windows.Forms.Label();
             this.playButton = new System.Windows.Forms.Button();
+            this.outputLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // gameTitle
@@ -60,6 +61,16 @@
             this.playButton.UseVisualStyleBackColor = false;
             this.playButton.Click += new System.EventHandler(this.Button1_Click);
             // 
+            // outputLabel
+            // 
+            this.outputLabel.BackColor = System.Drawing.Color.Transparent;
+            this.outputLabel.Font = new System.Drawing.Font("Schneidler BT", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.outputLabel.ForeColor = System.Drawing.Color.White;
+            this.outputLabel.Location = new System.Drawing.Point(93, 73);
+            this.outputLabel.Name = "outputLabel";
+            this.outputLabel.Size = new System.Drawing.Size(583, 136);
+            this.outputLabel.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -67,10 +78,12 @@
             this.BackgroundImage = global::AdventureGameSummative.Properties.Resources.TheHuntImage;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(764, 467);
+            this.Controls.Add(this.outputLabel);
             this.Controls.Add(this.playButton);
             this.Controls.Add(this.gameTitle);
             this.Name = "Form1";
             this.Text = "TheHuntGame";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -80,6 +93,7 @@
 
         private System.Windows.Forms.Label gameTitle;
         private System.Windows.Forms.Button playButton;
+        private System.Windows.Forms.Label outputLabel;
     }
 }
 
