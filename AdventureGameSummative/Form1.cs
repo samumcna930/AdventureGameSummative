@@ -17,7 +17,7 @@ namespace AdventureGameSummative
         bool hasFishing = false;
         bool hasKey = false;
         int key = 0;
-        int scene = 0;
+        int scene = 1;
         int bulletChance = 35;
         int scene35Rng;
         public Form1()
@@ -34,7 +34,9 @@ namespace AdventureGameSummative
         {
             gameTitle.Text = "";
             Thread.Sleep(800);
-            playButton.Visible = false;
+            playButton.Enabled = false;
+
+            this.Focus();
             outputLabel.Text = "It is winter, there is a man eating grizzly that is lurking about in the winter wood." +
                       "You have to hunt it and kill it. However there are supplies around that may help your hunt.";
             optionLabel1.Text = "Abandoned cabin";
@@ -100,10 +102,10 @@ namespace AdventureGameSummative
              
             }
 
-           else if (e.KeyCode == Keys.N)
-            {
-            if (scene == 1) { scene = 14; }
-            }
+                else if (e.KeyCode == Keys.N)
+                {
+                if (scene == 1) { scene = 14; }
+                }
 
 
             switch (scene)
@@ -142,12 +144,14 @@ namespace AdventureGameSummative
                     outputLabel.Text = "You find a hunting rifle inside the chest";
                     hasRifle = true;
                     break;
-                case 7: outputLabel.Text = "The key has broken";
+                case 7:
+                    outputLabel.Text = "The key has broken";
                     break;
                 case 8:
                     outputLabel.Text = "With nothing left to find at the cabin you return to your hut";
                     break;
-                case 9: outputLabel.Text = "You come along to the river shore and can see many trout in swimming with the current.";
+                case 9:
+                    outputLabel.Text = "You come along to the river shore and can see many trout in swimming with the current.";
                     optionLabel1.Text = "catch the fishes";
                     optionLabel2.Text = "keep going";
                     break;
