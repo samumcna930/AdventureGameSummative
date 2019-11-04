@@ -21,6 +21,7 @@ namespace AdventureGameSummative
         int scene35Rng = 0;
         int scene17Rng = 0;
         int scene20Rng = 0;
+        int scene21Rng = 0;
         public Form1()
         {
             InitializeComponent();
@@ -99,13 +100,22 @@ namespace AdventureGameSummative
                 else if (scene == 20)
                 {
                     Random randGen = new Random();
-                    scene20Rng = randGen.Next(1,11)
+                    scene20Rng = randGen.Next(1, 11);
+                    if (scene20Rng == 1|| scene20Rng == 2 || scene20Rng == 3 || scene20Rng == 4)
+                    { scene = 27; }
+                    else { scene = 21; }
                 }
-                else if 
-        
-                
-
-         
+                else if (scene == 21)
+                {
+                    Random randGen = new Random();
+                    scene21Rng = randGen.Next(1, 11);
+                    if (scene21Rng == 1 || scene21Rng == 2 || scene21Rng == 3 || scene21Rng == 4 ||
+                        scene21Rng == 5 || scene21Rng == 6) { scene = 23; }
+                    else { scene = 24; }
+                }
+                else if (scene == 24) { scene = 25; }
+                else if (scene == 28)
+                { if(hasFishing)}
             }
 
             else if (e.KeyCode == Keys.B)
@@ -129,6 +139,10 @@ namespace AdventureGameSummative
                     if (hasKnife) { scene = 16; }
                     else outputLabel.Text = "You need to have the hunting knife to acess this option"; 
                 }
+                else if (scene == 17) { scene = 18; }
+                else if (scene == 20) { scene = 28; }
+                else if (scene == 28) { scene = 29; }
+
              
             }
 
@@ -136,6 +150,7 @@ namespace AdventureGameSummative
                 {
                 if (scene == 1) { scene = 14; }
                 //else if (scene == 15) { scene =}
+                else if (scene == 28) { scene = 30; }
                 }
         
 
