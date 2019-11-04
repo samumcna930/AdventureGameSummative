@@ -13,28 +13,27 @@ namespace AdventureGameSummative
 {
     public partial class Form1 : Form
     {
+        bool hasKnife = false;
         bool hasRifle = false;
         bool hasFishing = false;
         bool hasKey = false;
-        int key = 0;
         int scene = 1;
-        int bulletChance = 35;
-        int scene35Rng;
+        int scene35Rng = 0;
+        int scene17Rng = 0;
+        int scene20Rng = 0;
         public Form1()
         {
             InitializeComponent();
             pictureBoxB.Visible = false;
             pictureBoxM.Visible = false;
             pictureBoxN.Visible = false;
-            Random randGen = new Random();
-
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
             gameTitle.Text = "";
             Thread.Sleep(800);
-            playButton.Enabled = false;
+            playButton.Visible = false;
 
             this.Focus();
             outputLabel.Text = "It is winter, there is a man eating grizzly that is lurking about in the winter wood." +
@@ -43,7 +42,9 @@ namespace AdventureGameSummative
             optionLabel2.Text = "Along riverbed";
             optionLabel3.Text = "Head North";
             pictureBoxB.Visible = true;
+            Thread.Sleep(400);
             pictureBoxM.Visible = true;
+            Thread.Sleep(400);
             pictureBoxN.Visible = true;
         }
 
@@ -52,10 +53,14 @@ namespace AdventureGameSummative
             if (e.KeyCode == Keys.M)       //red button press
             {
                 if (scene == 1) { scene = 2; }
-                else if (scene == 2) { scene = 3; }
-                else if (scene == 3) { scene = 4; hasFishing = true; }
-                else if (scene == 4) { scene = 0; }
-                else if (scene == 5) { scene = 0; }
+                else if (scene == 2) { scene = 3; hasFishing = true; }
+                else if (scene == 3) { scene = 4; }
+                else if (scene == 4) { scene = 1; }
+                else if (scene == 5)
+                {
+                    if (hasKey) { scene = 35; }
+                    else { scene = 5; }
+                }
                 else if (scene == 35)
                 {
                     if (hasKey)
@@ -76,8 +81,27 @@ namespace AdventureGameSummative
                 }
 
                 else if (scene == 11) { scene = 9; }
-                else if (scene ==  12) { scene = 0; }
-              
+                else if (scene == 12) { scene = 0; }
+                else if (scene == 14) { scene = 15; }
+                else if (scene == 15)
+                {
+                    if (hasRifle) { scene = 17; }
+                    else outputLabel.Text = "You need to find the rifle to access this option.";
+                }
+                else if (scene == 17)
+                {
+                    Random randGen = new Random();
+                    scene17Rng = randGen.Next(1, 11);
+                    if (scene17Rng == 1 || scene17Rng == 2 || scene17Rng == 3)
+                    { scene = 19; }
+                    else { scene = 20; }
+                }
+                else if (scene == 20)
+                {
+                    Random randGen = new Random();
+                    scene20Rng = randGen.Next(1,11)
+                }
+                else if 
         
                 
 
@@ -90,23 +114,30 @@ namespace AdventureGameSummative
                 else if (scene == 2) { scene = 3; }
                 else if (scene == 3) { scene = 1; }
                 else if (scene == 4) { scene = 5; }
-                else if (scene == 5) { scene = 4; }
+                else if (scene == 5) { scene = 1; }
 
                 else if (scene == 35) { scene = 6; }
 
 
-                else if (scene == 9) { scene = 10;}
-                else if (scene == 10) { scene = 11;}
+                else if (scene == 9) { scene = 10; }
+                else if (scene == 10) { scene = 11; }
                 else if (scene == 11) { scene = 1; }
                 else if (scene == 12) { scene = 9; }
+                else if (scene == 14) { scene = 1; }
+                else if (scene == 15)
+                {
+                    if (hasKnife) { scene = 16; }
+                    else outputLabel.Text = "You need to have the hunting knife to acess this option"; 
+                }
              
             }
 
                 else if (e.KeyCode == Keys.N)
                 {
                 if (scene == 1) { scene = 14; }
+                //else if (scene == 15) { scene =}
                 }
-
+        
 
             switch (scene)
             {
@@ -136,9 +167,7 @@ namespace AdventureGameSummative
                     optionLabel2.Text = "Go back to hut";
                     break;
                 case 5:
-                    outputLabel.Text = "You find a locked chest.";
-                    if (hasKey) { scene = 35; }
-                    else { scene = 4; }
+                    outputLabel.Text = "You find a locked chest.";                
                     break;
                 case 6:
                     outputLabel.Text = "You find a hunting rifle inside the chest";
@@ -258,6 +287,12 @@ namespace AdventureGameSummative
                     optionLabel1.Text = "Use the rusty key";
                     optionLabel2.Text = "Return to hut";
                     break;
+                case 36:
+                    outputLabel.Text = "Your movement were to slow and his sharp claw got you and ripped your heart open and you died";
+                    break;
+                case 37:
+                    outputLabel.Text = "You ran so fast and jumped on the bear and gave him punches to the face. He started to lose a lot of blood and fell over";
+                    break;
                 case 96:
                     outputLabel.Text = "You have died and unsuccessfully killed the bear.";
                     break;
@@ -269,7 +304,7 @@ namespace AdventureGameSummative
                 case 98:
                      outputLabel.Text = "You have died and unsuccessfully killed the bear.";
                     break;
-                 case 99:
+                case 99:
                      outputLabel.Text = "Would you like to try again?";
                      optionLabel1.Text = "Yes";
                      optionLabel2.Text = "No";
