@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.gameTitle = new System.Windows.Forms.Label();
             this.playButton = new System.Windows.Forms.Button();
             this.outputLabel = new System.Windows.Forms.Label();
@@ -75,15 +76,19 @@
             // outputLabel
             // 
             this.outputLabel.BackColor = System.Drawing.Color.Transparent;
-            this.outputLabel.Font = new System.Drawing.Font("Schneidler BT", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.outputLabel.ForeColor = System.Drawing.Color.White;
-            this.outputLabel.Location = new System.Drawing.Point(93, 73);
+            this.outputLabel.Font = new System.Drawing.Font("Schneidler Md BT", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.outputLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.outputLabel.Location = new System.Drawing.Point(75, 22);
             this.outputLabel.Name = "outputLabel";
-            this.outputLabel.Size = new System.Drawing.Size(583, 136);
+            this.outputLabel.Size = new System.Drawing.Size(661, 191);
             this.outputLabel.TabIndex = 2;
             // 
             // pictureBoxM
             // 
+            this.pictureBoxM.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxM.BackgroundImage = global::AdventureGameSummative.Properties.Resources.bloodSplatter;
+            this.pictureBoxM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxM.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxM.InitialImage")));
             this.pictureBoxM.Location = new System.Drawing.Point(198, 220);
             this.pictureBoxM.Name = "pictureBoxM";
             this.pictureBoxM.Size = new System.Drawing.Size(48, 43);
@@ -117,7 +122,7 @@
             // optionLabel1
             // 
             this.optionLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.optionLabel1.Font = new System.Drawing.Font("Schadow Lt BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionLabel1.Font = new System.Drawing.Font("Schneidler Blk BT", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.optionLabel1.Location = new System.Drawing.Point(269, 213);
             this.optionLabel1.Name = "optionLabel1";
             this.optionLabel1.Size = new System.Drawing.Size(426, 50);
@@ -126,7 +131,7 @@
             // optionLabel2
             // 
             this.optionLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.optionLabel2.Font = new System.Drawing.Font("Schadow Lt BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionLabel2.Font = new System.Drawing.Font("Schneidler Blk BT", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.optionLabel2.Location = new System.Drawing.Point(273, 283);
             this.optionLabel2.Name = "optionLabel2";
             this.optionLabel2.Size = new System.Drawing.Size(422, 46);
@@ -135,7 +140,7 @@
             // optionLabel3
             // 
             this.optionLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.optionLabel3.Font = new System.Drawing.Font("Schadow Lt BT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionLabel3.Font = new System.Drawing.Font("Schneidler Blk BT", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.optionLabel3.Location = new System.Drawing.Point(274, 343);
             this.optionLabel3.Name = "optionLabel3";
             this.optionLabel3.Size = new System.Drawing.Size(421, 46);

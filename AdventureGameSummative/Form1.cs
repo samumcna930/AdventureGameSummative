@@ -22,6 +22,7 @@ namespace AdventureGameSummative
         int scene17Rng = 0;
         int scene20Rng = 0;
         int scene21Rng = 0;
+        int scene15Rng = 0;
         public Form1()
         {
             InitializeComponent();
@@ -51,6 +52,7 @@ namespace AdventureGameSummative
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
+            if (scene != 1|| scene != 15 || scene != 28) { pictureBoxN}
             if (e.KeyCode == Keys.M)       //red button press
             {
                 if (scene == 1) { scene = 2; }
@@ -115,7 +117,10 @@ namespace AdventureGameSummative
                 }
                 else if (scene == 24) { scene = 25; }
                 else if (scene == 28)
-                { if(hasFishing)}
+                { if (hasFishing) {pictureBoxN.Visible = true; }  }
+
+
+
             }
 
             else if (e.KeyCode == Keys.B)
@@ -142,6 +147,17 @@ namespace AdventureGameSummative
                 else if (scene == 17) { scene = 18; }
                 else if (scene == 20) { scene = 28; }
                 else if (scene == 28) { scene = 29; }
+                else if (scene == 99) { scene = 1;
+                    bool hasKnife = false;
+                    bool hasRifle = false;
+                    bool hasFishing = false;
+                    bool hasKey = false;
+                    int scene35Rng = 0;
+                    int scene17Rng = 0;
+                    int scene20Rng = 0;
+                    int scene21Rng = 0;
+                    int scene15Rng = 0;
+                }
 
              
             }
@@ -149,7 +165,14 @@ namespace AdventureGameSummative
                 else if (e.KeyCode == Keys.N)
                 {
                 if (scene == 1) { scene = 14; }
-                //else if (scene == 15) { scene =}
+                else if (scene == 15)
+                {
+                    Random randGen = new Random();
+                    scene15Rng = randGen.Next(1, 11);
+                    if (scene15Rng == 1) { scene = 37; }
+                    else { scene = 36; }
+                }
+
                 else if (scene == 28) { scene = 30; }
                 }
         
@@ -160,14 +183,14 @@ namespace AdventureGameSummative
                     break;
                 case 1:
                     outputLabel.Text = "It is winter, there is a man eating grizzly that is lurking about in the winter wood." +
-                        "You have to hunt it and kill it. However there are supplies around that may help your hunt. + " +
+                        "You have to hunt it and kill it. However there are supplies around that may help your hunt. " +
                         "Head North when you are ready to challenge the grizzly";
                     optionLabel1.Text = "Abandoned cabin";
                     optionLabel2.Text = "Along riverbed";
                     optionLabel3.Text = "Head North";
                     break;
                 case 2:
-                    outputLabel.Text = "There is no food to be found here, however you find a fishing rod.";
+                    outputLabel.Text = "You find a fishing rod.";
                     optionLabel1.Text = "Take the rod";
                     optionLabel2.Text = "Leave it";
                     break;
@@ -177,9 +200,18 @@ namespace AdventureGameSummative
                     optionLabel2.Text = "Don't search";
                     break;
                 case 4:
-                    outputLabel.Text = "You find 3 rifle bullets";
-                    optionLabel1.Text = "Keep searching";
-                    optionLabel2.Text = "Go back to hut";
+                    if (hasRifle)
+                    {
+                        outputLabel.Text = "You already found 3 rifle bullets";
+                        optionLabel1.Text = "Keep searching";
+                        optionLabel2.Text = "Go back to hut";
+                    }
+                    else
+                    {
+                        outputLabel.Text = "You find 3 rifle bullets";
+                        optionLabel1.Text = "Keep searching";
+                        optionLabel2.Text = "Go back to hut";
+                    }
                     break;
                 case 5:
                     outputLabel.Text = "You find a locked chest.";                
@@ -215,7 +247,9 @@ namespace AdventureGameSummative
                     optionLabel2.Text = "Don't go back to the hut";
                     break;
                 case 13:
-                    outputLabel.Text = " You try to catch fish with your bare hands however the water gives you hypothermia and you freeze to death  ";
+                    outputLabel.Text = " You try to catch fish with your bare hands however the water gives you hypothermia and you freeze to death";
+                    Thread.Sleep(2000);
+                    scene = 99;
                     break;
                 case 14:
                     outputLabel.Text = "You are entering the grizzly's territory";
@@ -239,9 +273,13 @@ namespace AdventureGameSummative
                     break;
                 case 18:
                     outputLabel.Text = "The grizzly sees you running and catches up and murders you";
+                    Thread.Sleep(2000);
+                    scene = 99;
                     break;
                 case 19:
                     outputLabel.Text = "The bullet pierces the grizzly and dies.";
+                    Thread.Sleep(2000);
+                    scene = 98;
                     break;
                 case 20:
                     outputLabel.Text = "The bullet misses, and the bear charges at you";
@@ -255,9 +293,13 @@ namespace AdventureGameSummative
                     break;
                 case 22:
                     outputLabel.Text = "You try to outrun the grizzly however it catches up to you and kills you";
+                    Thread.Sleep(2000);
+                    scene = 99;
                     break;
                 case 23:
                     outputLabel.Text = "The bullet pierces the grizzly and it dies";
+                    Thread.Sleep(2000);
+                    scene = 98;
                     break;
                 case 24:
                     outputLabel.Text = "You missed";
@@ -266,12 +308,18 @@ namespace AdventureGameSummative
                     break;
                 case 25:
                     outputLabel.Text = "You ran out of bullets. The grizzly kills you.";
+                    Thread.Sleep(2000);
+                    scene = 99;
                     break;
                 case 26:
                     outputLabel.Text = "The grizzly is quick to catch up and makes fast work of you.";
+                    Thread.Sleep(2000);
+                    scene = 99;
                     break;
                 case 27:
                     outputLabel.Text = "The bullet pierces the grizzly and it dies.";
+                    Thread.Sleep(2000);
+                    scene = 98;
                     break;
                 case 28:
                     outputLabel.Text = "You climb up a tree and the bear is close behind. ";
@@ -281,21 +329,29 @@ namespace AdventureGameSummative
                     break;
                 case 29:
                     outputLabel.Text = "You shoot the grizzly in the face at point blank range.";
+                    Thread.Sleep(2000);
+                    scene = 98;
                     break;
                 case 30:
-                    outputLabel.Text = "Your hands slip and you fall to your death.";                   
+                    outputLabel.Text = "Your hands slip and you fall to your death.";
+                    Thread.Sleep(2000);
+                    scene = 99;
                     break;
                 case 31:
                     outputLabel.Text = "The grizzly whilst climbing the tree tries to catch the fish midair, slips and falls to it's death.";
+                    Thread.Sleep(2000);
+                    scene = 98;
                     break;
                 case 32:
                     outputLabel.Text = "The grizzly is quick to catch up, and effortlessly eats you up.";
                     break;
                 case 33:
                     outputLabel.Text = "Fighting the bear with only a hunting knife proved to be foolish because the bear killed you with one swing of it's paw.";
+                    Thread.Sleep(2000);
+                    scene = 99;
                     break;
                 case 34:
-                    outputLabel.Text = "You bear stands up, and you immediately plunge the knife into the bears eyeball, the bear falls over dead. ";
+                    outputLabel.Text = "You bear stands up, and you immediately plunge the knife into the bears eyeball, the bear falls over dead.";
                     break;
                 case 35:
                     outputLabel.Text = "The key matches the chest.";
@@ -308,19 +364,13 @@ namespace AdventureGameSummative
                 case 37:
                     outputLabel.Text = "You ran so fast and jumped on the bear and gave him punches to the face. He started to lose a lot of blood and fell over";
                     break;
-                case 96:
-                    outputLabel.Text = "You have died and unsuccessfully killed the bear.";
-                    break;
-                case 97:
-                     outputLabel.Text = "Would you like to try again?";
-                     optionLabel1.Text = "Yes";
-                     optionLabel2.Text = "No";
-                    break;
                 case 98:
-                     outputLabel.Text = "You have died and unsuccessfully killed the bear.";
+                    outputLabel.Text = "You have survived and successfully killed the grizzly. Congradulations!";
+                    optionLabel1.Text = "Yes";
+                    optionLabel2.Text = "No";
                     break;
                 case 99:
-                     outputLabel.Text = "Would you like to try again?";
+                     outputLabel.Text = "You did not survive and failed to kill the grizzlu.";
                      optionLabel1.Text = "Yes";
                      optionLabel2.Text = "No";
                     break;
