@@ -52,7 +52,7 @@ namespace AdventureGameSummative
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (scene != 1|| scene != 15 || scene != 28) { pictureBoxN}
+            if (scene == 1|| scene == 15 || scene == 28) { pictureBoxN.Visible = false; }
             if (e.KeyCode == Keys.M)       //red button press
             {
                 if (scene == 1) { scene = 2; }
