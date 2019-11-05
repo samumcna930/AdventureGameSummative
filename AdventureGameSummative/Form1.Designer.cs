@@ -86,12 +86,12 @@
             // pictureBoxM
             // 
             this.pictureBoxM.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxM.BackgroundImage = global::AdventureGameSummative.Properties.Resources.bloodSplatter;
+            this.pictureBoxM.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxM.BackgroundImage")));
             this.pictureBoxM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxM.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxM.InitialImage")));
-            this.pictureBoxM.Location = new System.Drawing.Point(198, 220);
+            this.pictureBoxM.Location = new System.Drawing.Point(181, 206);
             this.pictureBoxM.Name = "pictureBoxM";
-            this.pictureBoxM.Size = new System.Drawing.Size(48, 43);
+            this.pictureBoxM.Size = new System.Drawing.Size(65, 57);
             this.pictureBoxM.TabIndex = 3;
             this.pictureBoxM.TabStop = false;
             // 
@@ -105,6 +105,7 @@
             // 
             // pictureBoxB
             // 
+            this.pictureBoxB.BackColor = System.Drawing.Color.White;
             this.pictureBoxB.Location = new System.Drawing.Point(198, 283);
             this.pictureBoxB.Name = "pictureBoxB";
             this.pictureBoxB.Size = new System.Drawing.Size(48, 46);
