@@ -17,7 +17,7 @@ namespace AdventureGameSummative
         bool hasRifle = false;
         bool hasFishing = false;
         bool hasKey = false;
-        int scene = 1;
+        int scene = 0;
         int scene35Rng;
         int scene17Rng;
         int scene20Rng;
@@ -33,6 +33,9 @@ namespace AdventureGameSummative
             letterBLabel.Text = "";
             letterMLabel.Text = "";
             letterNLabel.Text = "";
+
+            //if (scene == 1 || scene == 15 || scene == 28) { pictureBoxN.Visible = true; letterNLabel.Text = "N"; optionLabel3.Visible = true; }
+            //else { pictureBoxN.Visible = false;  letterNLabel.Text = ""; optionLabel3.Visible = false; }
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -42,6 +45,7 @@ namespace AdventureGameSummative
             playButton.Visible = false;
 
             this.Focus();
+
             outputLabel.Text = "It is winter, there is a man eating grizzly that is lurking about in the winter wood." +
                       "You have to hunt it and kill it. However there are supplies around that may help your hunt.";
             optionLabel1.Text = "Abandoned cabin";
@@ -58,14 +62,11 @@ namespace AdventureGameSummative
             Thread.Sleep(1000);
             pictureBoxN.Visible = true;
             letterNLabel.Text = "N";
-
+            scene = 1;
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (scene == 1|| scene == 15 || scene == 28) { pictureBoxN.Visible = true; letterNLabel.Text = "N"; optionLabel3.Visible = true; }
-            else { pictureBoxN.Visible = false; letterNLabel.Text = ""; optionLabel3.Visible = false; }
-
             if (e.KeyCode == Keys.M)       
             {
                 if (scene == 1) { scene = 2; }
@@ -200,9 +201,10 @@ namespace AdventureGameSummative
                     optionLabel3.Text = "Head North";
                     break;
                 case 2:
-                    if (hasFishing) 
+                    pictureBoxN.Visible = false; letterNLabel.Text = ""; optionLabel3.Visible = false;
+                    if (hasFishing)
                     { 
-                    outputLabel.Text = "You have already found a fishing rod";
+                        outputLabel.Text = "You have already found a fishing rod";
                         Thread.Sleep(1200);
                         scene = 3;
                     }
@@ -243,6 +245,7 @@ namespace AdventureGameSummative
                     outputLabel.Text = "With nothing left to find at the cabin you return to your hut";
                     break;
                 case 9:
+                    pictureBoxN.Visible = false; letterNLabel.Text = ""; optionLabel3.Visible = false;
                     outputLabel.Text = "You come along to the river shore and can see many trout in swimming with the current.";
                     optionLabel1.Text = "Catch the fish";
                     optionLabel2.Text = "keep going";
@@ -268,9 +271,10 @@ namespace AdventureGameSummative
                     scene = 99;
                     break;
                 case 14:
+                    pictureBoxN.Visible = false; letterNLabel.Text = ""; optionLabel3.Visible = false;
                     outputLabel.Text = "You are entering the grizzly's territory";
-                    optionLabel1.Text = "fight it";
-                    optionLabel2.Text = "retreat";
+                    optionLabel1.Text = "I am ready";
+                    optionLabel2.Text = "I need more time";
                     break;
                 case 15:
                     outputLabel.Text = "You are confident with your resources in hand that you may overcome the grizzly. ";
