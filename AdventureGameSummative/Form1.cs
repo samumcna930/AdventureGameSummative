@@ -193,6 +193,7 @@ namespace AdventureGameSummative
                 case 0: 
                     break;
                 case 1:
+                    pictureBoxN.Visible = true; letterNLabel.Text = "N"; optionLabel3.Visible = true;
                     outputLabel.Text = "It is winter, there is a man eating grizzly that is lurking about in the winter wood." +
                         "You have to hunt it and kill it. However there are supplies around that may help you defeat it. " +
                         "Head North when you are ready to challenge the grizzly";

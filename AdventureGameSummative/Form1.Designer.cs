@@ -202,6 +202,8 @@
             this.BackgroundImage = global::AdventureGameSummative.Properties.Resources.TheHuntImage;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1019, 575);
+            this.Controls.Add(this.playButton);
+            this.Controls.Add(this.gameTitle);
             this.Controls.Add(this.letterNLabel);
             this.Controls.Add(this.optionLabel2);
             this.Controls.Add(this.letterBLabel);
@@ -211,10 +213,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBoxM);
             this.Controls.Add(this.outputLabel);
-            this.Controls.Add(this.playButton);
             this.Controls.Add(this.optionLabel3);
             this.Controls.Add(this.optionLabel1);
-            this.Controls.Add(this.gameTitle);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "TheHuntGame";
