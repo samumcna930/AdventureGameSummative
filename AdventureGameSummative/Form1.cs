@@ -18,11 +18,11 @@ namespace AdventureGameSummative
         bool hasFishing = false;
         bool hasKey = false;
         int scene = 1;
-        int scene35Rng = 0;
-        int scene17Rng = 0;
-        int scene20Rng = 0;
-        int scene21Rng = 0;
-        int scene15Rng = 0;
+        int scene35Rng;
+        int scene17Rng;
+        int scene20Rng;
+        int scene21Rng;
+        int scene15Rng;
         public Form1()
         {
             InitializeComponent();
@@ -43,17 +43,23 @@ namespace AdventureGameSummative
             optionLabel1.Text = "Abandoned cabin";
             optionLabel2.Text = "Along riverbed";
             optionLabel3.Text = "Head North";
+
+            Thread.Sleep(1000);
             pictureBoxB.Visible = true;
-            Thread.Sleep(400);
+
+            Thread.Sleep(1000);
             pictureBoxM.Visible = true;
-            Thread.Sleep(400);
+
+            Thread.Sleep(1000);
             pictureBoxN.Visible = true;
+
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (scene == 1|| scene == 15 || scene == 28) { pictureBoxN.Visible = false; }
-            if (e.KeyCode == Keys.M)       //red button press
+            if (scene == 1|| scene == 15 || scene == 28) { pictureBoxN.Visible = true; }
+            else { pictureBoxN.Visible = false; }
+            if (e.KeyCode == Keys.M)       
             {
                 if (scene == 1) { scene = 2; }
                 else if (scene == 2) { scene = 3; hasFishing = true; }
@@ -64,6 +70,7 @@ namespace AdventureGameSummative
                     if (hasKey) { scene = 35; }
                     else { scene = 5; }
                 }
+
                 else if (scene == 35)
                 {
                     if (hasKey)
@@ -73,7 +80,6 @@ namespace AdventureGameSummative
                         if (scene35Rng == 1) { scene = 7; }
                         else { scene = 6; }
                     }
-
                     else { scene = 4; }
                 }
 
@@ -91,6 +97,7 @@ namespace AdventureGameSummative
                     if (hasRifle) { scene = 17; }
                     else outputLabel.Text = "You need to find the rifle to access this option.";
                 }
+
                 else if (scene == 17)
                 {
                     Random randGen = new Random();
@@ -99,6 +106,7 @@ namespace AdventureGameSummative
                     { scene = 19; }
                     else { scene = 20; }
                 }
+
                 else if (scene == 20)
                 {
                     Random randGen = new Random();
@@ -107,6 +115,7 @@ namespace AdventureGameSummative
                     { scene = 27; }
                     else { scene = 21; }
                 }
+
                 else if (scene == 21)
                 {
                     Random randGen = new Random();
@@ -115,12 +124,9 @@ namespace AdventureGameSummative
                         scene21Rng == 5 || scene21Rng == 6) { scene = 23; }
                     else { scene = 24; }
                 }
+
                 else if (scene == 24) { scene = 25; }
-                else if (scene == 28)
-                { if (hasFishing) {pictureBoxN.Visible = true; }  }
-
-
-
+                else if (scene == 28) { if (hasFishing) { pictureBoxN.Visible = true; } }
             }
 
             else if (e.KeyCode == Keys.B)
@@ -130,10 +136,7 @@ namespace AdventureGameSummative
                 else if (scene == 3) { scene = 1; }
                 else if (scene == 4) { scene = 5; }
                 else if (scene == 5) { scene = 1; }
-
                 else if (scene == 35) { scene = 6; }
-
-
                 else if (scene == 9) { scene = 10; }
                 else if (scene == 10) { scene = 11; }
                 else if (scene == 11) { scene = 1; }
@@ -190,6 +193,12 @@ namespace AdventureGameSummative
                     optionLabel3.Text = "Head North";
                     break;
                 case 2:
+                    if (hasFishing) 
+                    { 
+                    outputLabel.Text = "You have already found a fishing rod";
+                        Thread.Sleep(1200);
+                        scene = 3;
+                    }
                     outputLabel.Text = "You find a fishing rod.";
                     optionLabel1.Text = "Take the rod";
                     optionLabel2.Text = "Leave it";
@@ -228,7 +237,7 @@ namespace AdventureGameSummative
                     break;
                 case 9:
                     outputLabel.Text = "You come along to the river shore and can see many trout in swimming with the current.";
-                    optionLabel1.Text = "catch the fishes";
+                    optionLabel1.Text = "Catch the fish";
                     optionLabel2.Text = "keep going";
                     break;
                 case 10:
@@ -374,55 +383,10 @@ namespace AdventureGameSummative
                      optionLabel1.Text = "Yes";
                      optionLabel2.Text = "No";
                     break;
-                    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                   
                 }
         }
+
     }
    
 }
