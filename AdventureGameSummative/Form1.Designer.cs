@@ -215,6 +215,7 @@
             this.Controls.Add(this.outputLabel);
             this.Controls.Add(this.optionLabel3);
             this.Controls.Add(this.optionLabel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "TheHuntGame";
