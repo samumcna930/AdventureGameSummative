@@ -29,6 +29,10 @@ namespace AdventureGameSummative
             pictureBoxB.Visible = false;
             pictureBoxM.Visible = false;
             pictureBoxN.Visible = false;
+
+            letterBLabel.Text = "";
+            letterMLabel.Text = "";
+            letterNLabel.Text = "";
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -46,19 +50,22 @@ namespace AdventureGameSummative
 
             Thread.Sleep(1000);
             pictureBoxB.Visible = true;
-
+            letterBLabel.Text = "B";
             Thread.Sleep(1000);
             pictureBoxM.Visible = true;
+            letterMLabel.Text = "M";
 
             Thread.Sleep(1000);
             pictureBoxN.Visible = true;
+            letterNLabel.Text = "N";
 
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (scene == 1|| scene == 15 || scene == 28) { pictureBoxN.Visible = true; }
-            else { pictureBoxN.Visible = false; }
+            if (scene == 1|| scene == 15 || scene == 28) { pictureBoxN.Visible = true; letterNLabel.Text = "N"; optionLabel3.Visible = true; }
+            else { pictureBoxN.Visible = false; letterNLabel.Text = ""; optionLabel3.Visible = false; }
+
             if (e.KeyCode == Keys.M)       
             {
                 if (scene == 1) { scene = 2; }
@@ -186,7 +193,7 @@ namespace AdventureGameSummative
                     break;
                 case 1:
                     outputLabel.Text = "It is winter, there is a man eating grizzly that is lurking about in the winter wood." +
-                        "You have to hunt it and kill it. However there are supplies around that may help your hunt. " +
+                        "You have to hunt it and kill it. However there are supplies around that may help you defeat it. " +
                         "Head North when you are ready to challenge the grizzly";
                     optionLabel1.Text = "Abandoned cabin";
                     optionLabel2.Text = "Along riverbed";
@@ -360,7 +367,9 @@ namespace AdventureGameSummative
                     scene = 99;
                     break;
                 case 34:
-                    outputLabel.Text = "You bear stands up, and you immediately plunge the knife into the bears eyeball, the bear falls over dead.";
+                    outputLabel.Text = "The grizzly stands up, and you immediately plunge the knife into the grizzly's eyeball, the grizzly falls over dead.";
+                    Thread.Sleep(2000);
+                    scene = 98;
                     break;
                 case 35:
                     outputLabel.Text = "The key matches the chest.";
@@ -368,10 +377,14 @@ namespace AdventureGameSummative
                     optionLabel2.Text = "Return to hut";
                     break;
                 case 36:
-                    outputLabel.Text = "Your movement were to slow and his sharp claw got you and ripped your heart open and you died";
+                    outputLabel.Text = "Your speed was no match for the grizzly, his sharp claw got you and ripped you open and you died";
+                    Thread.Sleep(2000);
+                    scene = 99;
                     break;
                 case 37:
-                    outputLabel.Text = "You ran so fast and jumped on the bear and gave him punches to the face. He started to lose a lot of blood and fell over";
+                    outputLabel.Text = "You summoned your inner Bruce Lee, and beat the life out of the grizzly";
+                    Thread.Sleep(2000);
+                    scene = 98;
                     break;
                 case 98:
                     outputLabel.Text = "You have survived and successfully killed the grizzly. Congradulations!";
