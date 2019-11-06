@@ -86,5 +86,35 @@
   <ItemGroup>
     <None Include="Resources\bloodSplatter.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grizzly.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scream.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reload.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gunshot.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\watersplash.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insidecabin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guyfreezing.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\riverside.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bear.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bear.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

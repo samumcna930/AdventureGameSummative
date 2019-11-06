@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Media; 
 
 namespace AdventureGameSummative
 {
@@ -33,7 +34,6 @@ namespace AdventureGameSummative
             letterBLabel.Text = "";
             letterMLabel.Text = "";
             letterNLabel.Text = "";
-
             //if (scene == 1 || scene == 15 || scene == 28) { pictureBoxN.Visible = true; letterNLabel.Text = "N"; optionLabel3.Visible = true; }
             //else { pictureBoxN.Visible = false;  letterNLabel.Text = ""; optionLabel3.Visible = false; }
         }
@@ -96,7 +96,7 @@ namespace AdventureGameSummative
                     if (hasFishing) { scene = 12; }
                     else { scene = 13; }
                 }
-
+                else if (scene == 10) { scene = 11; }
                 else if (scene == 11) { scene = 9; }
                 else if (scene == 12) { scene = 0; }
                 else if (scene == 14) { scene = 15; }
@@ -146,7 +146,7 @@ namespace AdventureGameSummative
                 else if (scene == 5) { scene = 1; }
                 else if (scene == 35) { scene = 6; }
                 else if (scene == 9) { scene = 10; }
-                else if (scene == 10) { scene = 11; }
+                else if (scene == 10) { scene = 9; }
                 else if (scene == 11) { scene = 1; }
                 else if (scene == 12) { scene = 9; }
                 else if (scene == 14) { scene = 1; }
@@ -393,11 +393,21 @@ namespace AdventureGameSummative
                     break;
                 case 98:
                     outputLabel.Text = "You have survived and successfully killed the grizzly. Congradulations!";
+                    optionLabel1.Text = "";
+                    optionLabel2.Text = "";
+                    optionLabel3.Text = "";
+                    Thread.Sleep(1000);
+                    outputLabel.Text = "Would you like to try again?";
                     optionLabel1.Text = "Yes";
                     optionLabel2.Text = "No";
                     break;
                 case 99:
-                     outputLabel.Text = "You did not survive and failed to kill the grizzlu.";
+                     outputLabel.Text = "You did not survive and failed to kill the grizzly.";
+                    optionLabel1.Text = "";
+                    optionLabel2.Text = "";
+                    optionLabel3.Text = "";
+                    Thread.Sleep(1000);
+                    outputLabel.Text = "Would you like to try again?";
                      optionLabel1.Text = "Yes";
                      optionLabel2.Text = "No";
                     break;
