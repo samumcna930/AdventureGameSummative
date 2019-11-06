@@ -79,11 +79,11 @@
             // outputLabel
             // 
             this.outputLabel.BackColor = System.Drawing.Color.Transparent;
-            this.outputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.outputLabel.Font = new System.Drawing.Font("Schneidler BT", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.outputLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.outputLabel.Location = new System.Drawing.Point(75, 22);
             this.outputLabel.Name = "outputLabel";
-            this.outputLabel.Size = new System.Drawing.Size(661, 191);
+            this.outputLabel.Size = new System.Drawing.Size(666, 198);
             this.outputLabel.TabIndex = 2;
             // 
             // pictureBoxM

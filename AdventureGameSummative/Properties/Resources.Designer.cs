@@ -73,6 +73,26 @@ namespace AdventureGameSummative.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bearattack {
+            get {
+                object obj = ResourceManager.GetObject("bearattack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bearcharge {
+            get {
+                object obj = ResourceManager.GetObject("bearcharge", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bloodSplatter {
             get {
                 object obj = ResourceManager.GetObject("bloodSplatter", resourceCulture);
