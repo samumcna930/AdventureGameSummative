@@ -114,13 +114,46 @@
     <None Include="Resources\bear.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bear.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\bearcharge.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bearattack.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\death.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keybroke.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deathmusic.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grizzly.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chestopen %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chestopen %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deadbody.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fishing.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Closing Drawer-SoundBible.com-1853830442.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\walking.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lootknife.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\punch.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

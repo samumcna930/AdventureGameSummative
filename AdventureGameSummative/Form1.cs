@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System;                       //AdventureGameSummative by Ben and Sammy 2019/11/06
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +14,7 @@ namespace AdventureGameSummative
 {
     public partial class Form1 : Form
     {
+        //Globals
         bool hasKnife = false;
         bool hasRifle = false;
         bool hasFishing = false;
@@ -27,6 +28,7 @@ namespace AdventureGameSummative
         public Form1()
         {
             InitializeComponent();
+            //Options are initially hidden for title screen
             pictureBoxB.Visible = false;
             pictureBoxM.Visible = false;
             pictureBoxN.Visible = false;
@@ -34,8 +36,11 @@ namespace AdventureGameSummative
             letterBLabel.Text = "";
             letterMLabel.Text = "";
             letterNLabel.Text = "";
+
             //if (scene == 1 || scene == 15 || scene == 28) { pictureBoxN.Visible = true; letterNLabel.Text = "N"; optionLabel3.Visible = true; }
             //else { pictureBoxN.Visible = false;  letterNLabel.Text = ""; optionLabel3.Visible = false; }
+
+
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -67,6 +72,20 @@ namespace AdventureGameSummative
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
+            //Adding in variables for sounds I will use
+            SoundPlayer deathMusic = new SoundPlayer(Properties.Resources.deathmusic);
+            SoundPlayer grizzlyGrowl = new SoundPlayer(Properties.Resources.grizzly);
+            SoundPlayer gunShot = new SoundPlayer(Properties.Resources.gunshot);
+            SoundPlayer key = new SoundPlayer(Properties.Resources.keybroke);
+            SoundPlayer lootBullet = new SoundPlayer(Properties.Resources.lootbullet);
+            SoundPlayer reload = new SoundPlayer(Properties.Resources.reload);
+            SoundPlayer scream = new SoundPlayer(Properties.Resources.scream);
+            SoundPlayer waterSplash = new SoundPlayer(Properties.Resources.watersplash);
+            SoundPlayer chest = new SoundPlayer(Properties.Resources.chestopen__1_);
+            SoundPlayer walk = new SoundPlayer(Properties.Resources.walking);
+            SoundPlayer lootKnife = new SoundPlayer(Properties.Resources.lootknife);
+            SoundPlayer punch = new SoundPlayer(Properties.Resources.punch);
+
             if (e.KeyCode == Keys.M)       
             {
                 if (scene == 1) { scene = 2; }
@@ -78,7 +97,6 @@ namespace AdventureGameSummative
                     if (hasKey) { scene = 35; }
                     else { scene = 5; }
                 }
-
                 else if (scene == 35)
                 {
                     if (hasKey)
@@ -90,7 +108,6 @@ namespace AdventureGameSummative
                     }
                     else { scene = 4; }
                 }
-
                 else if (scene == 9)
                 {
                     if (hasFishing) { scene = 12; }
@@ -105,7 +122,6 @@ namespace AdventureGameSummative
                     if (hasRifle) { scene = 17; }
                     else outputLabel.Text = "You need to find the rifle to access this option.";
                 }
-
                 else if (scene == 17)
                 {
                     Random randGen = new Random();
@@ -114,7 +130,6 @@ namespace AdventureGameSummative
                     { scene = 19; }
                     else { scene = 20; }
                 }
-
                 else if (scene == 20)
                 {
                     Random randGen = new Random();
@@ -123,7 +138,6 @@ namespace AdventureGameSummative
                     { scene = 27; }
                     else { scene = 21; }
                 }
-
                 else if (scene == 21)
                 {
                     Random randGen = new Random();
@@ -132,7 +146,6 @@ namespace AdventureGameSummative
                         scene21Rng == 5 || scene21Rng == 6) { scene = 23; }
                     else { scene = 24; }
                 }
-
                 else if (scene == 24) { scene = 25; }
                 else if (scene == 28) { if (hasFishing) { pictureBoxN.Visible = true; } }
             }
@@ -158,7 +171,9 @@ namespace AdventureGameSummative
                 else if (scene == 17) { scene = 18; }
                 else if (scene == 20) { scene = 28; }
                 else if (scene == 28) { scene = 29; }
-                else if (scene == 99) { scene = 1;
+                else if (scene == 99) 
+                {   //player hits play again and all the items reset aswell as the rng numbers
+                    scene = 1;
                     bool hasKnife = false;
                     bool hasRifle = false;
                     bool hasFishing = false;
@@ -186,13 +201,13 @@ namespace AdventureGameSummative
 
                 else if (scene == 28) { scene = 30; }
                 }
-        
-
             switch (scene)
             {
+
                 case 0: 
                     break;
                 case 1:
+                    backgroundPicture.Image = null;
                     pictureBoxN.Visible = true; letterNLabel.Text = "N"; optionLabel3.Visible = true;
                     outputLabel.Text = "It is winter, there is a man-eating grizzly that is lurking about in the winter wood." +
                         "You have to hunt it and kill it. However there are supplies around that may help you defeat it. " +
@@ -202,6 +217,7 @@ namespace AdventureGameSummative
                     optionLabel3.Text = "Head North";
                     break;
                 case 2:
+                    backgroundPicture.Image = Properties.Resources.insidecabin;
                     pictureBoxN.Visible = false; letterNLabel.Text = ""; optionLabel3.Visible = false;
                     if (hasFishing)
                     { 
@@ -214,6 +230,7 @@ namespace AdventureGameSummative
                     optionLabel2.Text = "Leave it";
                     break;
                 case 3:
+                    lootBullet.PlaySync();
                     outputLabel.Text = "There are more things to explore in the cabin.";
                     optionLabel1.Text = "Keep searching";
                     optionLabel2.Text = "Don't search";
@@ -227,112 +244,148 @@ namespace AdventureGameSummative
                     }
                     else
                     {
+                        lootBullet.PlaySync();
                         outputLabel.Text = "You find 3 rifle bullets";
                         optionLabel1.Text = "Keep searching";
                         optionLabel2.Text = "Go back to hut";
                     }
                     break;
                 case 5:
-                    outputLabel.Text = "You find a locked chest.";                
+                    chest.PlaySync();
+                    outputLabel.Text = "You find a locked chest.";
                     break;
                 case 6:
+                    reload.PlaySync();
                     outputLabel.Text = "You find a hunting rifle inside the chest";
                     hasRifle = true;
                     break;
                 case 7:
+                    key.PlaySync();
                     outputLabel.Text = "The key has broken";
                     break;
                 case 8:
+                    walk.PlaySync();
                     outputLabel.Text = "With nothing left to find at the cabin you return to your hut";
                     break;
                 case 9:
+                    backgroundPicture.Image = Properties.Resources.fishing;
                     pictureBoxN.Visible = false; letterNLabel.Text = ""; optionLabel3.Visible = false;
                     outputLabel.Text = "You come along to the river shore and can see many trout in swimming with the current.";
                     optionLabel1.Text = "Catch the fish";
                     optionLabel2.Text = "keep going";
                     break;
                 case 10:
+                    backgroundPicture.Image = Properties.Resources.deadbody;
                     outputLabel.Text = "You come across a cold dead body of a man. It looks he was killed by the grizzly.";
                     optionLabel1.Text = "loot the body";
                     optionLabel2.Text = "Don't loot the body";
                     break;
                 case 11:
+                    lootKnife.Play();
                     outputLabel.Text = "You loot the dead man and find a rusty key.You also find a hunting knife.";
                     optionLabel1.Text = "go back to riverbed";
                     optionLabel2.Text = "go back to hut";
                     break;
                 case 12:
+                    waterSplash.PlaySync();
                     outputLabel.Text = "You are successful in catching some trout. ";
                     optionLabel1.Text = "Go back to hut";
                     optionLabel2.Text = "Don't go back to the hut";
                     break;
                 case 13:
+                    backgroundPicture.Image = Properties.Resources.guyfreezing;
                     outputLabel.Text = " You try to catch fish with your bare hands however the water gives you hypothermia and you freeze to death";
                     Thread.Sleep(2000);
                     scene = 99;
                     break;
                 case 14:
+                    backgroundPicture.Image = Properties.Resources.grizzly1;
                     pictureBoxN.Visible = false; letterNLabel.Text = ""; optionLabel3.Visible = false;
                     outputLabel.Text = "You are entering the grizzly's territory";
                     optionLabel1.Text = "I am ready";
                     optionLabel2.Text = "I need more time";
                     break;
                 case 15:
+                    reload.Play();
                     outputLabel.Text = "You are confident with your resources in hand that you may overcome the grizzly. ";
-                    optionLabel1.Text = "beat the bear with hands";
-                    optionLabel2.Text = "Snipe the bear";
+                    optionLabel1.Text = "Beat the grizzly";
+                    optionLabel2.Text = "Snipe the grizzly";
+                    optionLabel3.Text = "Stab the grizzly";
                     break;
                 case 16:
+                    backgroundPicture.Image = Properties.Resources.bearcharge;
                     outputLabel.Text = "The grizzly is coming! ";
                     optionLabel1.Text = "Fight";
                     optionLabel2.Text = "Flight";
                     break;
                 case 17:
-                    outputLabel.Text = "You wait for the grizzly in cover for many hours. Finally you spot the beast.";
+                    grizzlyGrowl.PlaySync();
+                    outputLabel.Text = "You wait for the grizzly in cover for many hours. Finally you spot the killer.";
                     optionLabel1.Text = "Fight";
                     optionLabel2.Text = "Flight";
                     break;
                 case 18:
-                    outputLabel.Text = "The grizzly sees you running and catches up and murders you";
+                    backgroundPicture.Image = Properties.Resources.bearattack;
+                    outputLabel.Text = "The grizzly sees you running and catches up, and finally murders you";
                     Thread.Sleep(2000);
                     scene = 99;
                     break;
                 case 19:
+                    gunShot.Play();
+                    grizzlyGrowl.PlaySync();
                     outputLabel.Text = "The bullet pierces the grizzly and dies.";
                     Thread.Sleep(2000);
                     scene = 98;
                     break;
                 case 20:
+                    gunShot.Play();
+                    reload.PlaySync();
+                    backgroundPicture.Image = Properties.Resources.bearcharge;
                     outputLabel.Text = "The bullet misses, and the bear charges at you";
                     optionLabel1.Text = "shoot again";
                     optionLabel2.Text = "Climb a tree";
                     break;
                 case 21:
-                    outputLabel.Text = "The bear is closing in on you";
+                    gunShot.Play();
+                    reload.PlaySync();
+                    backgroundPicture.Image = Properties.Resources.bearcharge;
+                    outputLabel.Text = "The grizzly is closing in on you";
                     optionLabel1.Text = "Take another shot";
                     optionLabel2.Text = "Run";
                     break;
                 case 22:
+                    grizzlyGrowl.Play();
+                    scream.PlaySync();
+                    backgroundPicture.Image = Properties.Resources.bearattack;
                     outputLabel.Text = "You try to outrun the grizzly however it catches up to you and kills you";
                     Thread.Sleep(2000);
                     scene = 99;
                     break;
                 case 23:
+                    gunShot.PlaySync();
                     outputLabel.Text = "The bullet pierces the grizzly and it dies";
                     Thread.Sleep(2000);
                     scene = 98;
                     break;
                 case 24:
+                    gunShot.Play();
+                    backgroundPicture.Image = Properties.Resources.bearcharge;
                     outputLabel.Text = "You missed";
                     optionLabel1.Text = "Take another shot";
                     optionLabel2.Text = "Run";
                     break;
                 case 25:
+                    grizzlyGrowl.Play();
+                    scream.PlaySync();
+                    backgroundPicture.Image = Properties.Resources.bearattack;
                     outputLabel.Text = "You ran out of bullets. The grizzly kills you.";
                     Thread.Sleep(2000);
                     scene = 99;
                     break;
                 case 26:
+                    grizzlyGrowl.Play();
+                    scream.PlaySync();
+                    backgroundPicture.Image = Properties.Resources.bearattack;
                     outputLabel.Text = "The grizzly is quick to catch up and makes fast work of you.";
                     Thread.Sleep(2000);
                     scene = 99;
@@ -354,39 +407,54 @@ namespace AdventureGameSummative
                     scene = 98;
                     break;
                 case 30:
+                    scream.PlaySync();
                     outputLabel.Text = "Your hands slip and you fall to your death.";
                     Thread.Sleep(2000);
                     scene = 99;
                     break;
                 case 31:
+                    grizzlyGrowl.PlaySync();
                     outputLabel.Text = "The grizzly whilst climbing the tree tries to catch the fish midair, slips and falls to it's death.";
                     Thread.Sleep(2000);
                     scene = 98;
                     break;
                 case 32:
+                    grizzlyGrowl.Play();
+                    scream.PlaySync();
+                    backgroundPicture.Image = Properties.Resources.bearattack;
                     outputLabel.Text = "The grizzly is quick to catch up, and effortlessly eats you up.";
                     break;
                 case 33:
+                    grizzlyGrowl.Play();
+                    scream.PlaySync();
+                    backgroundPicture.Image = Properties.Resources.bearattack;
                     outputLabel.Text = "Fighting the bear with only a hunting knife proved to be foolish because the bear killed you with one swing of it's paw.";
                     Thread.Sleep(2000);
                     scene = 99;
                     break;
                 case 34:
+                    grizzlyGrowl.Play();
                     outputLabel.Text = "The grizzly stands up, and you immediately plunge the knife into the grizzly's eyeball, the grizzly falls over dead.";
                     Thread.Sleep(2000);
                     scene = 98;
                     break;
                 case 35:
+                    backgroundPicture.Image = Properties.Resources.insidecabin;
                     outputLabel.Text = "The key matches the chest.";
                     optionLabel1.Text = "Use the rusty key";
                     optionLabel2.Text = "Return to hut";
                     break;
                 case 36:
-                    outputLabel.Text = "Your speed was no match for the grizzly, his sharp claw got you and ripped you open and you died";
+                    grizzlyGrowl.Play();
+                    scream.PlaySync();
+                    backgroundPicture.Image = Properties.Resources.bearattack;
+                    outputLabel.Text = "Your speed was no match for the grizzly, his sharp claws ripped you open and you died";
                     Thread.Sleep(2000);
                     scene = 99;
                     break;
                 case 37:
+                    punch.Play();
+                    grizzlyGrowl.PlaySync();
                     outputLabel.Text = "You summoned your inner Bruce Lee, and beat the life out of the grizzly";
                     Thread.Sleep(2000);
                     scene = 98;
@@ -402,7 +470,8 @@ namespace AdventureGameSummative
                     optionLabel2.Text = "No";
                     break;
                 case 99:
-                     outputLabel.Text = "You did not survive and failed to kill the grizzly.";
+                    backgroundPicture.Image = Properties.Resources.death;
+                    outputLabel.Text = "You did not survive and failed to kill the grizzly.";
                     optionLabel1.Text = "";
                     optionLabel2.Text = "";
                     optionLabel3.Text = "";
