@@ -232,9 +232,16 @@ namespace AdventureGameSummative
                         letterMLabel.Visible = false;
                         letterBLabel.Visible = false;
                         letterNLabel.Visible = false; 
-                        Thread.Sleep(1000);
+                        Thread.Sleep(3000);
 
                         scene = 3;
+                        pictureBoxM.Visible = true;
+                        pictureBoxB.Visible = true;
+                        letterMLabel.Visible = true;
+                        letterBLabel.Visible = true;
+                        outputLabel.Text = "There are more things to explore in the cabin.";
+                        optionLabel1.Text = "Keep searching";
+                        optionLabel2.Text = "Don't search";
                     }
                     else 
                     {
@@ -246,6 +253,8 @@ namespace AdventureGameSummative
                     break;
                 case 3:
                     lootBullet.PlaySync();
+                    pictureBoxM.Visible = true;
+                    pictureBoxB.Visible = true;
                     letterMLabel.Visible = true;
                     letterBLabel.Visible = true;
                     outputLabel.Text = "There are more things to explore in the cabin.";
