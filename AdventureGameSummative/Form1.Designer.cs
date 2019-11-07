@@ -81,12 +81,12 @@
             // outputLabel
             // 
             this.outputLabel.BackColor = System.Drawing.Color.Transparent;
-            this.outputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.outputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.outputLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.outputLabel.Location = new System.Drawing.Point(458, 78);
+            this.outputLabel.Location = new System.Drawing.Point(458, 337);
             this.outputLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.outputLabel.Name = "outputLabel";
-            this.outputLabel.Size = new System.Drawing.Size(560, 500);
+            this.outputLabel.Size = new System.Drawing.Size(560, 241);
             this.outputLabel.TabIndex = 2;
             // 
             // optionLabel1

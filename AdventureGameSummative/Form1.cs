@@ -68,6 +68,7 @@ namespace AdventureGameSummative
             Thread.Sleep(1000);
             pictureBoxN.Visible = true;
             letterNLabel.Text = "N";
+            scene = 1;
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -91,7 +92,7 @@ namespace AdventureGameSummative
                 if (scene == 1) { scene = 2; }
                 else if (scene == 2) { scene = 3; hasFishing = true; }
                 else if (scene == 3) { scene = 4; }
-                else if (scene == 4) { scene = 1; }
+                else if (scene == 4) { scene = 5; }
                 else if (scene == 5)
                 {
                     if (hasKey) { scene = 35; }
@@ -155,7 +156,7 @@ namespace AdventureGameSummative
                 if (scene == 1) { scene = 9; }
                 else if (scene == 2) { scene = 3; }
                 else if (scene == 3) { scene = 1; }
-                else if (scene == 4) { scene = 5; }
+                else if (scene == 4) { scene = 1; }
                 else if (scene == 5) { scene = 1; }
                 else if (scene == 35) { scene = 6; }
                 else if (scene == 9) { scene = 10; }
@@ -203,9 +204,6 @@ namespace AdventureGameSummative
                 }
             switch (scene)
             {
-
-                case 0: 
-                    break;
                 case 1:
                     backgroundPicture.Image = null;
                     pictureBoxN.Visible = true; letterNLabel.Text = "N"; optionLabel3.Visible = true;
@@ -217,21 +215,39 @@ namespace AdventureGameSummative
                     optionLabel3.Text = "Head North";
                     break;
                 case 2:
-                    backgroundPicture.BackgroundImageLayout = ImageLayout.Zoom;
                     backgroundPicture.Image = Properties.Resources.insidecabin;
+                    backgroundPicture.BackgroundImageLayout = ImageLayout.Zoom;
                     pictureBoxN.Visible = false; letterNLabel.Text = ""; optionLabel3.Visible = false;
                     if (hasFishing)
                     { 
                         outputLabel.Text = "You have already found a fishing rod";
-                        Thread.Sleep(1200);
+                        pictureBoxM.Visible = false;
+                        pictureBoxB.Visible = false;
+                        pictureBoxN.Visible = false;
+
+                        optionLabel1.Text = "";
+                        optionLabel2.Text = "";
+                        optionLabel3.Text = "";
+
+                        letterMLabel.Visible = false;
+                        letterBLabel.Visible = false;
+                        letterNLabel.Visible = false; 
+                        Thread.Sleep(1000);
+
                         scene = 3;
                     }
-                    outputLabel.Text = "You find a fishing rod.";
-                    optionLabel1.Text = "Take the rod";
-                    optionLabel2.Text = "Leave it";
+                    else 
+                    {
+                        outputLabel.Text = "You find a fishing rod.";
+                        optionLabel1.Text = "Take the rod";
+                        optionLabel2.Text = "Leave it";
+                    }
+                    
                     break;
                 case 3:
                     lootBullet.PlaySync();
+                    letterMLabel.Visible = true;
+                    letterBLabel.Visible = true;
                     outputLabel.Text = "There are more things to explore in the cabin.";
                     optionLabel1.Text = "Keep searching";
                     optionLabel2.Text = "Don't search";
