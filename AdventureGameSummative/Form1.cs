@@ -51,8 +51,9 @@ namespace AdventureGameSummative
 
             this.Focus();
 
-            outputLabel.Text = "It is winter, there is a man eating grizzly that is lurking about in the winter wood." +
-                      "You have to hunt it and kill it. However there are supplies around that may help your hunt.";
+            outputLabel.Text = "It is winter, there is a man-eating grizzly that is lurking about in the winter wood." +
+                        "You have to hunt it and kill it. There are supplies around that may help you defeat it." +
+                        "Head North when you are ready to challenge the grizzly";
             optionLabel1.Text = "Abandoned cabin";
             optionLabel2.Text = "Along riverbed";
             optionLabel3.Text = "Head North";
@@ -67,7 +68,6 @@ namespace AdventureGameSummative
             Thread.Sleep(1000);
             pictureBoxN.Visible = true;
             letterNLabel.Text = "N";
-            scene = 1;
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -210,13 +210,14 @@ namespace AdventureGameSummative
                     backgroundPicture.Image = null;
                     pictureBoxN.Visible = true; letterNLabel.Text = "N"; optionLabel3.Visible = true;
                     outputLabel.Text = "It is winter, there is a man-eating grizzly that is lurking about in the winter wood." +
-                        "You have to hunt it and kill it. However there are supplies around that may help you defeat it. " +
+                        "You have to hunt it and kill it. There are supplies around that may help you defeat it." +
                         "Head North when you are ready to challenge the grizzly";
                     optionLabel1.Text = "Abandoned cabin";
                     optionLabel2.Text = "Along riverbed";
                     optionLabel3.Text = "Head North";
                     break;
                 case 2:
+                    backgroundPicture.BackgroundImageLayout = ImageLayout.Zoom;
                     backgroundPicture.Image = Properties.Resources.insidecabin;
                     pictureBoxN.Visible = false; letterNLabel.Text = ""; optionLabel3.Visible = false;
                     if (hasFishing)
@@ -268,6 +269,7 @@ namespace AdventureGameSummative
                     outputLabel.Text = "With nothing left to find at the cabin you return to your hut";
                     break;
                 case 9:
+                    backgroundPicture.BackgroundImageLayout = ImageLayout.Zoom;
                     backgroundPicture.Image = Properties.Resources.fishing;
                     pictureBoxN.Visible = false; letterNLabel.Text = ""; optionLabel3.Visible = false;
                     outputLabel.Text = "You come along to the river shore and can see many trout in swimming with the current.";
@@ -275,6 +277,7 @@ namespace AdventureGameSummative
                     optionLabel2.Text = "keep going";
                     break;
                 case 10:
+                    backgroundPicture.BackgroundImageLayout = ImageLayout.Zoom;
                     backgroundPicture.Image = Properties.Resources.deadbody;
                     outputLabel.Text = "You come across a cold dead body of a man. It looks he was killed by the grizzly.";
                     optionLabel1.Text = "loot the body";
@@ -293,12 +296,14 @@ namespace AdventureGameSummative
                     optionLabel2.Text = "Don't go back to the hut";
                     break;
                 case 13:
+                    backgroundPicture.BackgroundImageLayout = ImageLayout.Zoom;
                     backgroundPicture.Image = Properties.Resources.guyfreezing;
                     outputLabel.Text = " You try to catch fish with your bare hands however the water gives you hypothermia and you freeze to death";
                     Thread.Sleep(2000);
                     scene = 99;
                     break;
                 case 14:
+                    backgroundPicture.BackgroundImageLayout = ImageLayout.Zoom;
                     backgroundPicture.Image = Properties.Resources.grizzly1;
                     pictureBoxN.Visible = false; letterNLabel.Text = ""; optionLabel3.Visible = false;
                     outputLabel.Text = "You are entering the grizzly's territory";
@@ -313,6 +318,7 @@ namespace AdventureGameSummative
                     optionLabel3.Text = "Stab the grizzly";
                     break;
                 case 16:
+                    backgroundPicture.BackgroundImageLayout = ImageLayout.Zoom;
                     backgroundPicture.Image = Properties.Resources.bearcharge;
                     outputLabel.Text = "The grizzly is coming! ";
                     optionLabel1.Text = "Fight";
@@ -325,6 +331,7 @@ namespace AdventureGameSummative
                     optionLabel2.Text = "Flight";
                     break;
                 case 18:
+                    backgroundPicture.BackgroundImageLayout = ImageLayout.Zoom;
                     backgroundPicture.Image = Properties.Resources.bearattack;
                     outputLabel.Text = "The grizzly sees you running and catches up, and finally murders you";
                     Thread.Sleep(2000);
@@ -340,6 +347,7 @@ namespace AdventureGameSummative
                 case 20:
                     gunShot.Play();
                     reload.PlaySync();
+                    backgroundPicture.BackgroundImageLayout = ImageLayout.Zoom;
                     backgroundPicture.Image = Properties.Resources.bearcharge;
                     outputLabel.Text = "The bullet misses, and the bear charges at you";
                     optionLabel1.Text = "shoot again";
@@ -348,6 +356,7 @@ namespace AdventureGameSummative
                 case 21:
                     gunShot.Play();
                     reload.PlaySync();
+                    backgroundPicture.BackgroundImageLayout = ImageLayout.Zoom;
                     backgroundPicture.Image = Properties.Resources.bearcharge;
                     outputLabel.Text = "The grizzly is closing in on you";
                     optionLabel1.Text = "Take another shot";
@@ -356,6 +365,7 @@ namespace AdventureGameSummative
                 case 22:
                     grizzlyGrowl.Play();
                     scream.PlaySync();
+                    backgroundPicture.BackgroundImageLayout = ImageLayout.Zoom;
                     backgroundPicture.Image = Properties.Resources.bearattack;
                     outputLabel.Text = "You try to outrun the grizzly however it catches up to you and kills you";
                     Thread.Sleep(2000);
@@ -369,6 +379,7 @@ namespace AdventureGameSummative
                     break;
                 case 24:
                     gunShot.Play();
+                    backgroundPicture.BackgroundImageLayout = ImageLayout.Zoom;
                     backgroundPicture.Image = Properties.Resources.bearcharge;
                     outputLabel.Text = "You missed";
                     optionLabel1.Text = "Take another shot";
@@ -377,6 +388,7 @@ namespace AdventureGameSummative
                 case 25:
                     grizzlyGrowl.Play();
                     scream.PlaySync();
+                    backgroundPicture.BackgroundImageLayout = ImageLayout.Zoom;
                     backgroundPicture.Image = Properties.Resources.bearattack;
                     outputLabel.Text = "You ran out of bullets. The grizzly kills you.";
                     Thread.Sleep(2000);
@@ -421,12 +433,14 @@ namespace AdventureGameSummative
                 case 32:
                     grizzlyGrowl.Play();
                     scream.PlaySync();
+                    backgroundPicture.BackgroundImageLayout = ImageLayout.Zoom;
                     backgroundPicture.Image = Properties.Resources.bearattack;
                     outputLabel.Text = "The grizzly is quick to catch up, and effortlessly eats you up.";
                     break;
                 case 33:
                     grizzlyGrowl.Play();
                     scream.PlaySync();
+                    backgroundPicture.BackgroundImageLayout = ImageLayout.Zoom;
                     backgroundPicture.Image = Properties.Resources.bearattack;
                     outputLabel.Text = "Fighting the bear with only a hunting knife proved to be foolish because the bear killed you with one swing of it's paw.";
                     Thread.Sleep(2000);
@@ -460,6 +474,7 @@ namespace AdventureGameSummative
                     scene = 98;
                     break;
                 case 98:
+                    backgroundPicture.Image = Properties.Resources.victory;
                     outputLabel.Text = "You have survived and successfully killed the grizzly. Congradulations!";
                     optionLabel1.Text = "";
                     optionLabel2.Text = "";
@@ -471,6 +486,7 @@ namespace AdventureGameSummative
                     break;
                 case 99:
                     backgroundPicture.Image = Properties.Resources.death;
+                    deathMusic.Play();
                     outputLabel.Text = "You did not survive and failed to kill the grizzly.";
                     optionLabel1.Text = "";
                     optionLabel2.Text = "";

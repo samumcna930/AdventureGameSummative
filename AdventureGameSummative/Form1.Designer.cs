@@ -81,49 +81,49 @@
             // outputLabel
             // 
             this.outputLabel.BackColor = System.Drawing.Color.Transparent;
-            this.outputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.outputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.outputLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.outputLabel.Location = new System.Drawing.Point(53, -7);
+            this.outputLabel.Location = new System.Drawing.Point(458, 78);
             this.outputLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.outputLabel.Name = "outputLabel";
-            this.outputLabel.Size = new System.Drawing.Size(917, 309);
+            this.outputLabel.Size = new System.Drawing.Size(560, 500);
             this.outputLabel.TabIndex = 2;
             // 
             // optionLabel1
             // 
             this.optionLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.optionLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.optionLabel1.Location = new System.Drawing.Point(402, 349);
+            this.optionLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionLabel1.Location = new System.Drawing.Point(154, 351);
             this.optionLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.optionLabel1.Name = "optionLabel1";
-            this.optionLabel1.Size = new System.Drawing.Size(568, 62);
+            this.optionLabel1.Size = new System.Drawing.Size(296, 62);
             this.optionLabel1.TabIndex = 7;
             // 
             // optionLabel2
             // 
             this.optionLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.optionLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.optionLabel2.Location = new System.Drawing.Point(409, 428);
+            this.optionLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionLabel2.Location = new System.Drawing.Point(154, 425);
             this.optionLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.optionLabel2.Name = "optionLabel2";
-            this.optionLabel2.Size = new System.Drawing.Size(563, 57);
+            this.optionLabel2.Size = new System.Drawing.Size(296, 57);
             this.optionLabel2.TabIndex = 8;
             // 
             // optionLabel3
             // 
             this.optionLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.optionLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.optionLabel3.Location = new System.Drawing.Point(409, 519);
+            this.optionLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionLabel3.Location = new System.Drawing.Point(154, 507);
             this.optionLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.optionLabel3.Name = "optionLabel3";
-            this.optionLabel3.Size = new System.Drawing.Size(561, 57);
+            this.optionLabel3.Size = new System.Drawing.Size(296, 57);
             this.optionLabel3.TabIndex = 9;
             // 
             // letterMLabel
             // 
             this.letterMLabel.BackColor = System.Drawing.Color.Transparent;
             this.letterMLabel.Font = new System.Drawing.Font("Sitka Small", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letterMLabel.Location = new System.Drawing.Point(252, 335);
+            this.letterMLabel.Location = new System.Drawing.Point(12, 337);
             this.letterMLabel.Name = "letterMLabel";
             this.letterMLabel.Size = new System.Drawing.Size(77, 76);
             this.letterMLabel.TabIndex = 10;
@@ -133,7 +133,7 @@
             // 
             this.letterBLabel.BackColor = System.Drawing.Color.Transparent;
             this.letterBLabel.Font = new System.Drawing.Font("Sitka Small", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letterBLabel.Location = new System.Drawing.Point(252, 423);
+            this.letterBLabel.Location = new System.Drawing.Point(12, 411);
             this.letterBLabel.Name = "letterBLabel";
             this.letterBLabel.Size = new System.Drawing.Size(63, 71);
             this.letterBLabel.TabIndex = 11;
@@ -143,7 +143,7 @@
             // 
             this.letterNLabel.BackColor = System.Drawing.Color.Transparent;
             this.letterNLabel.Font = new System.Drawing.Font("Sitka Small", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letterNLabel.Location = new System.Drawing.Point(252, 505);
+            this.letterNLabel.Location = new System.Drawing.Point(12, 493);
             this.letterNLabel.Name = "letterNLabel";
             this.letterNLabel.Size = new System.Drawing.Size(61, 71);
             this.letterNLabel.TabIndex = 12;
@@ -154,7 +154,7 @@
             this.pictureBoxN.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxN.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxN.BackgroundImage")));
             this.pictureBoxN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBoxN.Location = new System.Drawing.Point(321, 519);
+            this.pictureBoxN.Location = new System.Drawing.Point(82, 505);
             this.pictureBoxN.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxN.Name = "pictureBoxN";
             this.pictureBoxN.Size = new System.Drawing.Size(64, 57);
@@ -166,7 +166,7 @@
             this.pictureBoxB.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxB.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxB.BackgroundImage")));
             this.pictureBoxB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxB.Location = new System.Drawing.Point(321, 428);
+            this.pictureBoxB.Location = new System.Drawing.Point(82, 419);
             this.pictureBoxB.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxB.Name = "pictureBoxB";
             this.pictureBoxB.Size = new System.Drawing.Size(64, 66);
@@ -179,7 +179,7 @@
             this.pictureBoxM.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxM.BackgroundImage")));
             this.pictureBoxM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxM.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxM.InitialImage")));
-            this.pictureBoxM.Location = new System.Drawing.Point(321, 341);
+            this.pictureBoxM.Location = new System.Drawing.Point(82, 337);
             this.pictureBoxM.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxM.Name = "pictureBoxM";
             this.pictureBoxM.Size = new System.Drawing.Size(64, 70);
@@ -204,8 +204,9 @@
             this.BackgroundImage = global::AdventureGameSummative.Properties.Resources.TheHuntImage;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1019, 575);
-            this.Controls.Add(this.backgroundPicture);
+            this.Controls.Add(this.gameTitle);
             this.Controls.Add(this.playButton);
+            this.Controls.Add(this.outputLabel);
             this.Controls.Add(this.letterNLabel);
             this.Controls.Add(this.optionLabel2);
             this.Controls.Add(this.letterBLabel);
@@ -215,8 +216,7 @@
             this.Controls.Add(this.pictureBoxM);
             this.Controls.Add(this.optionLabel3);
             this.Controls.Add(this.optionLabel1);
-            this.Controls.Add(this.gameTitle);
-            this.Controls.Add(this.outputLabel);
+            this.Controls.Add(this.backgroundPicture);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
